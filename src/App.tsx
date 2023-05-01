@@ -1,8 +1,25 @@
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './pages/HomePage';
+import SelectPlayerPage from './pages/SelectPlayerPage';
+import BoxScorePage from './pages/BoxScorePage';
+
+import Header from './components/Header';
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <BrowserRouter>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/setting" element={<SelectPlayerPage />} />
+        <Route path="/boxscore" element={<BoxScorePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
