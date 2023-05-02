@@ -9,7 +9,7 @@ export default function Header() {
   const dispatch = useDispatch();
 
   return (
-    <header className="flex items-center">
+    <header className="flex items-center mb-8">
       <Link to="/">
         <img
           src={logo}
