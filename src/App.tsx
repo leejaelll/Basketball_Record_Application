@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/HomePage';
 import SelectPlayerPage from './pages/SelectPlayerPage';
 import BoxScorePage from './pages/BoxScorePage';
+import GameResultPage from './pages/GameResultPage';
 
 import Header from './components/Header';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/setting" element={<SelectPlayerPage />} />
         <Route path="/boxscore" element={<BoxScorePage />} />
+        <Route path="/result" element={<GameResultPage />} />
       </Routes>
     </BrowserRouter>
   );
