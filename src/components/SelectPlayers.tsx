@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addToTodayPlayers } from '../modules/player';
+import { addToTodayPlayers, removeTodayPlayers } from '../modules/player';
 
 import TeamNameField from './TeamNameField';
 
@@ -32,7 +32,15 @@ export default function SelectPlayers({ teamName }) {
           {todayPlayers
             .filter((player) => player.teamName === teamName)
             .map((element) => (
-              <li key={element.id}>{element.name}</li>
+              <li key={element.id}>
+                {element.name}
+                <button
+                  type="button"
+                  onClick={() => dispatch(removeTodayPlayers(element))}
+                >
+                  -
+                </button>
+              </li>
             ))}
         </ul>
       </div>
