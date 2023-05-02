@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
-    <>
+    <div className=" flex items-center justify-center h-5/6	">
       <Link to="/setting">
-        {/* TODO: 'Start New Game 버튼을 누르면 todayPlayers가 빈배열이 되도록 만들어야 함' */}
-        <button type="button" className="bg-lime-300">
+        <button
+          type="button"
+          className="text-4xl btn-45 after:content-[''] after:absolute after:bg-black after:rounded-lg after:h-12 after:left-0 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:transition-transform after:ease-out after:-z-10 hover:after:translate-x-0 hover:after:translate-y-0 active:bg-red-400 hover:outline-none "
+        >
           Start New Game
         </button>
       </Link>
-    </>
+    </div>
   );
 }
