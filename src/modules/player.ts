@@ -10,6 +10,8 @@ export const DECREASE_STEAL = 'DECREASE_STEAL';
 export const INCREASE_FOUL = 'INCREASE_FOUL';
 export const DECREASE_FOUL = 'DECREASE_FOUL';
 export const ADD_TO_TODAY_PLAYERS = 'ADD_TO_TODAY_PLAYERS';
+export const INIT_TODAYPLAYERS = 'INIT_TODAYPLAYERS';
+export const REMOVE_TODAYPLAYERS = 'REMOVE_TODAYPLAYERS';
 
 /* ------------------------ 액션 함수 만들기(Action Creator) ----------------------- */
 export const addToTodayPlayers = (player, teamName) => {
@@ -105,6 +107,17 @@ export const decreaseFoul = (playerId) => {
     payload: {
       playerId,
     },
+  };
+};
+export const initTodayPlayers = () => {
+  return {
+    type: INIT_TODAYPLAYERS,
+  };
+};
+export const removeTodayPlayers = (player) => {
+  return {
+    type: REMOVE_TODAYPLAYERS,
+    payload: player,
   };
 };
 
@@ -248,6 +261,17 @@ export default function counterReducer(state = initialState, action) {
         ...state,
         todayPlayers: state.todayPlayers.map((el, idx) =>
           idx === idxDecreaseFoul ? { ...el, foul: (el.foul -= 1) } : el,
+        ),
+      };
+    case INIT_TODAYPLAYERS:
+      return { ...state, todayPlayers: [] };
+    case REMOVE_TODAYPLAYERS:
+      // action.payload는 선수 객체
+
+      return {
+        ...state,
+        todayPlayers: state.todayPlayers.filter(
+          (player) => player.id !== action.payload.id,
         ),
       };
     default:
