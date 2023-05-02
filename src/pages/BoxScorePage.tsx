@@ -2,8 +2,17 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import TeamScore from '../components/TeamScore';
 import BoxScore from '../components/BoxScore';
 import FoulCircle from '../components/FoulCircle';
+
+// import {
+//   teamArray,
+//   homeTeam,
+//   awayTeam,
+//   TotalScoreOfAway,
+//   TotalScoreOfHome,
+// } from '../utils/calculateScore';
 
 export default function BoxScorePage() {
   const state = useSelector((state) => state);
@@ -52,25 +61,31 @@ export default function BoxScorePage() {
   return (
     <div>
       <div>
-        <div>
-          <div>
-            <h1>{teamArray[0]}</h1>
-            <span>{TotalScoreOfHome}</span>
+        <div className="flex justify-center items-center gap-20 mt-20 mb-10">
+          {/* 팀+ 점수 */}
+          <div className="flex flex-col items-center gap-8">
+            <TeamScore teamName={teamArray[0]} teamScore={TotalScoreOfHome} />
             <FoulCircle foulCount={homeFoul} setFoul={setHomeFoul} />
           </div>
-          <span>VS</span>
-          <div>
-            <h1>{teamArray[1]}</h1>
-            <span>{TotalScoreOfAway}</span>
+          <div className="text-4xl">VS</div>
+          {/* 팀 + 점수 */}
+          <div className="flex flex-col items-center gap-8">
+            <TeamScore teamName={teamArray[1]} teamScore={TotalScoreOfAway} />
             <FoulCircle foulCount={awayFoul} setFoul={setAwayFoul} />
           </div>
         </div>
-        <BoxScore team={homeTeam} />
-        <BoxScore team={awayTeam} />
+        <div className="flex justify-evenly mb-20">
+          <BoxScore team={homeTeam} />
+          <BoxScore team={awayTeam} />
+        </div>
       </div>
-      <Link to="/result">
-        <button type="button" onClick={handleClickSaveGame}>
-          게임 종료
+      <Link to="/result" className="block w-fit ml-auto mr-4">
+        <button
+          type="button"
+          onClick={handleClickSaveGame}
+          className="text-4xl btn-45 after:content-[''] after:absolute after:bg-black after:rounded-lg after:h-12 after:left-0 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:transition-transform after:ease-out after:-z-10 hover:after:translate-x-0 hover:after:translate-y-0 active:bg-red-400 hover:outline-none "
+        >
+          Game Over
         </button>
       </Link>
     </div>
