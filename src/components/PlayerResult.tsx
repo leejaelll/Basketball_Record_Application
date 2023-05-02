@@ -4,7 +4,7 @@ export default function PlayerResult({ player }) {
   return (
     <tr>
       <td>{name}</td>
-      <td className="flex">{score}</td>
+      <td>{score}</td>
       <td>{rebound}</td>
       <td>{assist}</td>
       <td>{steal}</td>

@@ -19,11 +19,11 @@ export default function PlayerRow({ player }) {
   const { name, score, rebound, assist, steal, foul } = player;
 
   return (
-    <tr>
-      <td>{name}</td>
-      <td className="flex">
+    <tr className="text-lg">
+      <td className="text-center">{name}</td>
+      <td className="text-center text-2xl">
         {score}
-        <span className="ml-3">
+        <span>
           <button
             type="button"
             className="text-xl"
@@ -31,7 +31,7 @@ export default function PlayerRow({ player }) {
               dispatch(increaseScore(player.id));
             }}
           >
-            +
+            ➕
           </button>
           <button
             type="button"
@@ -40,13 +40,13 @@ export default function PlayerRow({ player }) {
               dispatch(decreaseScore(player.id));
             }}
           >
-            -
+            ➖
           </button>
         </span>
       </td>
-      <td>
+      <td className="text-center text-2xl">
         {rebound}
-        <span className="ml-3">
+        <span>
           <button
             type="button"
             className="text-xl"
@@ -54,7 +54,7 @@ export default function PlayerRow({ player }) {
               dispatch(increaseRebound(player.id));
             }}
           >
-            +
+            ➕
           </button>
           <button
             type="button"
@@ -63,13 +63,13 @@ export default function PlayerRow({ player }) {
               dispatch(decreaseRebound(player.id));
             }}
           >
-            -
+            ➖
           </button>
         </span>
       </td>
-      <td>
+      <td className="text-center text-2xl">
         {assist}
-        <span className="ml-3">
+        <span>
           <button
             type="button"
             className="text-xl"
@@ -77,7 +77,7 @@ export default function PlayerRow({ player }) {
               dispatch(increaseAssist(player.id));
             }}
           >
-            +
+            ➕
           </button>
           <button
             type="button"
@@ -86,13 +86,13 @@ export default function PlayerRow({ player }) {
               dispatch(decreaseAssist(player.id));
             }}
           >
-            -
+            ➖
           </button>
         </span>
       </td>
-      <td>
+      <td className="text-center text-2xl">
         {steal}
-        <span className="ml-3">
+        <span>
           <button
             type="button"
             className="text-xl"
@@ -100,7 +100,7 @@ export default function PlayerRow({ player }) {
               dispatch(increaseSteal(player.id));
             }}
           >
-            +
+            ➕
           </button>
           <button
             type="button"
@@ -109,13 +109,13 @@ export default function PlayerRow({ player }) {
               dispatch(decreaseSteal(player.id));
             }}
           >
-            -
+            ➖
           </button>
         </span>
       </td>
-      <td>
+      <td className="text-center text-2xl">
         {foul}
-        <span className="ml-3">
+        <span>
           <button
             type="button"
             className="text-xl"
@@ -123,7 +123,7 @@ export default function PlayerRow({ player }) {
               dispatch(increaseFoul(player.id));
             }}
           >
-            +
+            ➕
           </button>
           <button
             type="button"
@@ -132,7 +132,7 @@ export default function PlayerRow({ player }) {
               dispatch(decreaseFoul(player.id));
             }}
           >
-            -
+            ➖
           </button>
         </span>
       </td>

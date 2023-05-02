@@ -6,12 +6,12 @@ export default function FoulCircle({ foulCount, setFoul }) {
   };
 
   return (
-    <ul>
+    <ul className="flex gap-0.5">
       {new Array(5).fill(0).map((_, idx) => (
         <li
           key={idx}
           className={`w-6 h-6 rounded-full ${
-            idx + 1 <= foulCount ? 'bg-slate-900' : 'bg-slate-600'
+            idx + 1 <= foulCount ? 'bg-red-400' : 'bg-slate-200'
           }`}
           onClick={handleClick}
         ></li>

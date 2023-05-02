@@ -2,9 +2,9 @@ import PlayerRow from './PlayerRow';
 
 export default function BoxScore({ team }) {
   return (
-    <table className=" border-separate border-spacing-2 border border-slate-400">
+    <table className="border-separate border-spacing-y-1 m-5 w-1/2">
       <thead>
-        <tr>
+        <tr className="text-lg bg-slate-300">
           <th>Name</th>
           <th>Score</th>
           <th>Rebound</th>
