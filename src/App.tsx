@@ -15,7 +15,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/setting" element={<SelectPlayerPage />} />
         <Route path="/boxscore" element={<BoxScorePage />} />
         <Route path="/result" element={<GameResultPage />} />
