@@ -9,17 +9,17 @@ export default function Header() {
   const dispatch = useDispatch();
 
   return (
-    <header>
-      <div>
-        {/* TODO: Home버튼을 눌렀을 때 todayPlayers가 초기화되어야 함 */}
-        <Link to="/">
-          <img
-            src={logo}
-            className="w-20"
-            onClick={() => dispatch(initTodayPlayers())}
-          />
-        </Link>
-      </div>
+    <header className="flex items-center">
+      <Link to="/">
+        <img
+          src={logo}
+          className="w-20 rounded-xl mr-4"
+          onClick={() => dispatch(initTodayPlayers())}
+        />
+      </Link>
+      <h1 className="text-2xl font-bold">
+        Move Signature Box_Score Application 🏀
+      </h1>
     </header>
   );
 }
