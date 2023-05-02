@@ -1,5 +1,9 @@
 export const content = ['./src/**/*.{js,jsx,ts,tsx}'];
 export const theme = {
-  extend: {},
+  extend: {
+    fontFamily: {
+      pretendard: ['pretendard', 'sans-serif'],
+    },
+  },
 };
 export const plugins = [];
