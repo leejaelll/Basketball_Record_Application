@@ -79,7 +79,10 @@ export default function BoxScorePage() {
           <BoxScore team={awayTeam} />
         </div>
       </div>
-      <Link to="/result" className="block w-fit ml-auto mr-4">
+      <Link
+        to="/Basketball_Record_Application/result"
+        className="block w-fit ml-auto mr-4"
+      >
         <button
           type="button"
           onClick={handleClickSaveGame}

@@ -15,10 +15,19 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/setting" element={<SelectPlayerPage />} />
-        <Route path="/boxscore" element={<BoxScorePage />} />
-        <Route path="/result" element={<GameResultPage />} />
+        <Route path="/Basketball_Record_Application/" element={<Home />} />
+        <Route
+          path="/Basketball_Record_Application/setting"
+          element={<SelectPlayerPage />}
+        />
+        <Route
+          path="/Basketball_Record_Application/boxscore"
+          element={<BoxScorePage />}
+        />
+        <Route
+          path="/Basketball_Record_Application/result"
+          element={<GameResultPage />}
+        />
       </Routes>
     </BrowserRouter>
   );

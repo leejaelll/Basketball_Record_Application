@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="flex items-center mb-8">
-      <Link to="/home">
+      <Link to="Basketball_Record_Application/">
         <img
           src={logo}
           className="w-20 rounded-xl mr-4"
