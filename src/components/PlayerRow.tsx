@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquareMinus, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+
 import { useDispatch } from 'react-redux';
 
 import {
@@ -21,120 +24,100 @@ export default function PlayerRow({ player }) {
   return (
     <tr className="text-lg">
       <td className="text-center">{name}</td>
-      <td className="text-center text-2xl">
-        {score}
-        <span>
-          <button
-            type="button"
-            className="text-xl"
-            onClick={() => {
-              dispatch(increaseScore(player.id));
-            }}
-          >
-            ➕
-          </button>
-          <button
-            type="button"
-            className="text-2xl ml-2"
-            onClick={() => {
-              dispatch(decreaseScore(player.id));
-            }}
-          >
-            ➖
-          </button>
-        </span>
+      <td className="text-center text-3xl">
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(decreaseScore(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquareMinus} />
+        </button>
+        <span className="mx-1">{score}</span>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(increaseScore(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquarePlus} />
+        </button>
       </td>
-      <td className="text-center text-2xl">
-        {rebound}
-        <span>
-          <button
-            type="button"
-            className="text-xl"
-            onClick={() => {
-              dispatch(increaseRebound(player.id));
-            }}
-          >
-            ➕
-          </button>
-          <button
-            type="button"
-            className="text-2xl ml-2"
-            onClick={() => {
-              dispatch(decreaseRebound(player.id));
-            }}
-          >
-            ➖
-          </button>
-        </span>
+      <td className="text-center text-3xl">
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(decreaseRebound(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquareMinus} />
+        </button>
+        <span className="mx-1">{rebound}</span>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(increaseRebound(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquarePlus} />
+        </button>
       </td>
-      <td className="text-center text-2xl">
-        {assist}
-        <span>
-          <button
-            type="button"
-            className="text-xl"
-            onClick={() => {
-              dispatch(increaseAssist(player.id));
-            }}
-          >
-            ➕
-          </button>
-          <button
-            type="button"
-            className="text-2xl ml-2"
-            onClick={() => {
-              dispatch(decreaseAssist(player.id));
-            }}
-          >
-            ➖
-          </button>
-        </span>
+      <td className="text-center text-3xl">
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(decreaseAssist(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquareMinus} />
+        </button>
+        <span className="mx-1">{assist}</span>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(increaseAssist(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquarePlus} />
+        </button>
       </td>
-      <td className="text-center text-2xl">
-        {steal}
-        <span>
-          <button
-            type="button"
-            className="text-xl"
-            onClick={() => {
-              dispatch(increaseSteal(player.id));
-            }}
-          >
-            ➕
-          </button>
-          <button
-            type="button"
-            className="text-2xl ml-2"
-            onClick={() => {
-              dispatch(decreaseSteal(player.id));
-            }}
-          >
-            ➖
-          </button>
-        </span>
+      <td className="text-center text-3xl">
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(decreaseSteal(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquareMinus} />
+        </button>
+        <span className="mx-1">{steal}</span>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(increaseSteal(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquarePlus} />
+        </button>
       </td>
-      <td className="text-center text-2xl">
-        {foul}
-        <span>
-          <button
-            type="button"
-            className="text-xl"
-            onClick={() => {
-              dispatch(increaseFoul(player.id));
-            }}
-          >
-            ➕
-          </button>
-          <button
-            type="button"
-            className="text-2xl ml-2"
-            onClick={() => {
-              dispatch(decreaseFoul(player.id));
-            }}
-          >
-            ➖
-          </button>
-        </span>
+      <td className="text-center text-3xl">
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(decreaseFoul(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquareMinus} />
+        </button>
+        <span className="mx-1">{foul}</span>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(increaseFoul(player.id));
+          }}
+        >
+          <FontAwesomeIcon icon={faSquarePlus} />
+        </button>
       </td>
     </tr>
   );

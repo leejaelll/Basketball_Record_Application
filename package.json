@@ -1,17 +1,22 @@
 {
+  "homepage": "https://leejaelll.github.io/Basketball_Record_Application/",
   "name": "box-score-application",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://leajaelll.github.io/Basketball_Record_Application/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
