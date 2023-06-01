@@ -147,6 +147,8 @@ export const initialState = {
     { id: 21, name: '이준혁' },
     { id: 22, name: '정동진' },
     { id: 23, name: '조범식' },
+    { id: 24, name: '이동준' },
+    { id: 25, name: '최병선' },
   ],
   todayPlayers: [],
 };

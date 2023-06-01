@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 import { addToTodayPlayers, removeTodayPlayers } from '../modules/player';
 
 import TeamNameField from './TeamNameField';
@@ -15,9 +16,9 @@ export default function SelectPlayers({ teamName }) {
   };
 
   return (
-    <div className="flex flex-col w-2/4	px-4">
+    <Container>
       <TeamNameField teamName={teamName} />
-      <ul className="grid grid-cols-5 gap-3 mt-6	">
+      <PlayerList>
         {players.map((player) => (
           <li
             key={player.id}
@@ -32,7 +33,7 @@ export default function SelectPlayers({ teamName }) {
             </button>
           </li>
         ))}
-      </ul>
+      </PlayerList>
       <div className="flex flex-col items-center">
         <h2 className="mt-24 font-semibold text-2xl bg-slate-100 px-3 mb-3">
           선수확인⛹🏻
@@ -54,9 +55,25 @@ export default function SelectPlayers({ teamName }) {
             ))}
         </ul>
       </div>
-    </div>
+    </Container>
   );
 }
 
 // background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
 // bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 50%;
+`;
+
+const PlayerList = styled.ul`
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 1.5rem;
+`;

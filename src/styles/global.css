@@ -2,20 +2,23 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@layer components {
+/* @layer components {
   .btn-45 {
     @apply items-center bg-red-200 border-2 border-solid border-black rounded-lg box-border text-black cursor-pointer flex text-base h-12 justify-center leading-6 max-w-full px-6 relative text-center	no-underline select-none touch-manipulation font-bold;
   }
-}
+}  */
 
 body {
   box-sizing: border-box;
   width: 1180px;
-  height: 100vh;
+  height: 80vh;
   margin: 10px auto;
   font-family: pretendard;
 }
 
+a {
+  text-decoration: none;
+}
 #root {
   height: inherit;
 }

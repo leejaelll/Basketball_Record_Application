@@ -1,4 +1,7 @@
+import styled from 'styled-components';
+
 import { useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 
 import { initTodayPlayers } from '../modules/player';
@@ -9,17 +12,29 @@ export default function Header() {
   const dispatch = useDispatch();
 
   return (
-    <header className="flex items-center mb-8">
-      <Link to="Basketball_Record_Application/">
-        <img
-          src={logo}
-          className="w-20 rounded-xl mr-4"
-          onClick={() => dispatch(initTodayPlayers())}
-        />
+    <HeaderLayout>
+      <Link to="/">
+        <Img src={logo} onClick={() => dispatch(initTodayPlayers())} />
       </Link>
-      <h1 className="text-2xl font-bold">
-        Move Signature Box_Score Application 🏀
-      </h1>
-    </header>
+      <Title>Move_Record 🏀</Title>
+    </HeaderLayout>
   );
 }
+
+const HeaderLayout = styled.header`
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+`;
+
+const Title = styled.h1`
+  font-weight: 800;
+  font-size: 1.5rem;
+`;
+
+const Img = styled.img`
+  width: 5rem;
+  margin-right: 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+`;

@@ -2,7 +2,7 @@
 // import viteLogo from '/vite.svg';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from './pages/HomePage';
+import HomePage from './pages/HomePage';
 import SelectPlayerPage from './pages/SelectPlayerPage';
 import BoxScorePage from './pages/BoxScorePage';
 import GameResultPage from './pages/GameResultPage';
@@ -13,9 +13,8 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
-        <Route path="/Basketball_Record_Application/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/setting" element={<SelectPlayerPage />} />
         <Route path="/boxscore" element={<BoxScorePage />} />
         <Route path="/result" element={<GameResultPage />} />
